@@ -1,0 +1,97 @@
+echo "# parcial" >> README.md
+
+// Circulo número de lados es 0
+// Triangulo número de lados es 3
+// Cuadraddo número de lados es 4
+// Pentágono numero de lados es 5
+// Hexagono numero de lados es 6
+// Poligono numero de lados es mayor que 6
+// error si no contiene ningún lado (númerico =-1)
+
+function saberquefiguraes(Lados) {
+    switch(Lados) {
+        case 0:
+            console.log("Círculo no tiene lados");
+            break;
+        case 3:
+            console.log("Triángulo tiene 3 lados");
+            break;
+        case 4:
+            console.log("Cuadrado tiene 4 lados");
+            break;
+        case 5:
+            console.log("Pentágono tienen 5 ladod");
+            break;
+        case 6:
+            console.log("Hexágono tiene 6 lados");
+            break;
+        default:
+            if (numLados > 6) {
+                console.log("Polígono tiene más de 6 lados");
+            } else {
+                console.error("Error: Lo que se busca no tiene ningun lado o son menores a 0");
+            }
+    }
+}
+
+// parte B se realiza el guardado previo con la parte A
+
+function saberQueFiguraEs(numLados) {
+    if (numLados < 0) {
+        console.error("Error: El número de lados no es válido.");
+        return;
+    }
+
+    switch(numLados) {
+        case 0:
+            console.log("Círculo no tiene lados");
+            break;
+        case 3:
+            console.log("Triángulo tiene 3 lados");
+            break;
+        case 4:
+            console.log("Cuadrado tiene 4 lados");
+            break;
+        case 5:
+            console.log("Pentágono tiene 5 lados");
+            break;
+        case 6:
+            console.log("Hexágono tiene 6 lados");
+            break;
+        default:
+            if (numLados > 6) {
+                console.log("Polígono tiene más de 6 lados");
+            } else {
+                console.error("Error: Lo que se busca no tiene ningún lado o son menores a 0");
+            }
+    }
+}
+
+// parte C
+//PI =3,14 (aprox)
+
+function calcularPerimetro(numLados, longitudLado) {
+    if (numLados < 0 || longitudLado <= 0) 
+    {
+        console.error("Error: Los datos de entrada no son válidos.");
+        return;
+    }
+
+    let perimetro = 0;
+
+    if (numLados === 0) 
+    { // Circulo
+        perimetro = 2 * Math.PI * longitudLado;
+        console.log(`El perímetro del círculo es aproximadamente ${perimetro.toFixed(2)}`);
+    } 
+    else if (numLados = 3 || numLados = 4 || numLados = 5 || numLados = 6) { // Triangulo, Cuadrado, Pentagono, Hexagono
+        perimetro = numLados * longitudLado;
+        console.log(`El perímetro de la figura con ${numLados} lados es ${perimetro}`);
+    } 
+    else { // Poligono
+        perimetro = "No se puede calcular el perímetro de un polígono con este método.";
+        console.log(perimetro);
+    }
+
+    return perimetro;
+}
